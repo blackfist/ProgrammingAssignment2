@@ -21,9 +21,12 @@ makeCacheMatrix <- function(x = matrix()) {
   
   setInverse <- function(inverse) inverseMatrix <<- inverse
   
-  # I still don't know what this part does exactly, but without it you
-  # get errors: object of type 'closure' is not subsettable
-  # this might be what exports the sub functions of the function
+  # This is the return value for the function, a list where the
+  # key is a string and the value is the function with the same
+  # string name. That is why we access these functions by
+  # typing object$getInverse. Because we are accessing the 
+  # getInverse key in a list, which will return the value from
+  # the getInverse function.
   list(get=get, set=set, getInverse=getInverse, setInverse=setInverse)
 
 }
