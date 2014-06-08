@@ -3,6 +3,9 @@
 # cacheableMatrix <- makeCacheMatrix(kevin)
 # cacheSolve(cacheableMatrix)
 
+# a special kind of matrix object that allows you to save the 
+# results of a previous calculation and recall rather than 
+# redoing the calculation every time.
 
 makeCacheMatrix <- function(x = matrix()) {
   # sets the values if a matrix is passed in to the function
