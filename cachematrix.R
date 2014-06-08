@@ -1,9 +1,8 @@
-## Put comments here that give an overall description of what your
-## functions do
+# Example usage
+# kevin <- matrix(sample.int(10, 25, replace=T), nrow=5, ncol=5)
+# cacheableMatrix <- makeCacheMatrix(kevin)
+# cacheSolve(cacheableMatrix)
 
-## Write a short comment describing this function
-# The makeCacheMatrix function will store the inverse of the 
-# given matrix in a variable called inverseMatrix.
 
 makeCacheMatrix <- function(x = matrix()) {
   inverseMatrix <<- NULL
@@ -38,4 +37,13 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
+  invertedMatrix <- x$getInverse()
+  if(!is.null(invertedMatrix)) {
+    message("getting cached data")
+    return(invertedMatrix)
+  }
+  invertedMatrix <- solve(x$get())
+  x$setInverse(invertedMatrix)
+  invertedMatrix
+
 }
