@@ -1,4 +1,4 @@
-# Example usage
+# Example usage:
 # kevin <- matrix(sample.int(10, 25, replace=T), nrow=5, ncol=5)
 # cacheableMatrix <- makeCacheMatrix(kevin)
 # cacheSolve(cacheableMatrix)
