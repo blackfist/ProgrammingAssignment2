@@ -6,11 +6,13 @@
 # given matrix in a variable called inverseMatrix.
 
 makeCacheMatrix <- function(x = matrix()) {
-  inverseMatrix <- NULL
+  inverseMatrix <<- NULL
+  unInvertedMatrix <<- x
   
   # When the get function is invoked, the cached value is returned
   # which may be NULL if the inverse has not yet been calculated
   set <- function(y) {
+    print("set has been called")
     unInvertedMatrix <<- y
     inverseMatrix <<- NULL
   }
